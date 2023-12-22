@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  node-app:
+    container_name: node-app
+    build: ./node
+    networks: 
+      - nginx-node
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - 8080:80
+    depends_on:
+      - node-app
+    networks:
+      - nginx-node
+
+networks: 
+  nginx-node:
+    driver: bridge

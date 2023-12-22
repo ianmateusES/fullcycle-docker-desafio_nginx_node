@@ -1,0 +1,12 @@
+{
+  "name": "desafio-nginx_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "Ian Mateus",
+  "license": "ISC"
+}
