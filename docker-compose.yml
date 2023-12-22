@@ -1,10 +1,22 @@
 version: '3'
 
 services:
+  mysql:
+    container_name: mysql
+    build: ./mysql
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    networks:
+      - nginx-node
+
   node-app:
     container_name: node-app
     build: ./node
-    networks: 
+    depends_on:
+      - mysql
+    networks:
       - nginx-node
 
   nginx:
@@ -17,6 +29,6 @@ services:
     networks:
       - nginx-node
 
-networks: 
+networks:
   nginx-node:
     driver: bridge
