@@ -2,4 +2,7 @@ CREATE DATABASE fullcycle;
 
 USE fullcycle;
 
-INSERT INTO fullcycle;
+CREATE TABLE IF NOT EXISTS peplos (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255)
+);

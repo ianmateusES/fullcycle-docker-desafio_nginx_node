@@ -13,14 +13,6 @@ const dbConfig = {
 
 const connection = mysql.createConnection(dbConfig);
 
-// Criar tabela se não existir
-connection.query(`
-  CREATE TABLE IF NOT EXISTS peplos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255)
-  );
-`);
-
 const server = http.createServer((req, res) => {
   const headerDefault = { 'Content-Type': 'text/plain' };
   const { method, url: reqUrl } = req;
